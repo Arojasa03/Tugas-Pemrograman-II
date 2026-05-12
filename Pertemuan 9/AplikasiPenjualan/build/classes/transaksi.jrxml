@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+name="transaksi"
+pageWidth="595"
+pageHeight="842"
+columnWidth="555"
+leftMargin="20"
+rightMargin="20"
+topMargin="20"
+bottomMargin="20">
+
+    <queryString>
+        <![CDATA[SELECT * FROM transaksi]]>
+    </queryString>
+
+    <field name="id_barang" class="java.lang.String"/>
+    <field name="jumlah" class="java.lang.Integer"/>
+    <field name="total" class="java.lang.Integer"/>
+
+    <title>
+        <band height="50">
+
+            <staticText>
+                <reportElement x="180" y="10" width="200" height="30"/>
+                <textElement textAlignment="Center"/>
+                <text><![CDATA[LAPORAN TRANSAKSI]]></text>
+            </staticText>
+
+        </band>
+    </title>
+
+    <columnHeader>
+        <band height="20">
+
+            <staticText>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <text><![CDATA[ID Barang]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="170" y="0" width="150" height="20"/>
+                <text><![CDATA[Jumlah]]></text>
+            </staticText>
+
+            <staticText>
+                <reportElement x="340" y="0" width="150" height="20"/>
+                <text><![CDATA[Total]]></text>
+            </staticText>
+
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="20">
+
+            <textField>
+                <reportElement x="0" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{id_barang}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="170" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+            </textField>
+
+            <textField>
+                <reportElement x="340" y="0" width="150" height="20"/>
+                <textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+            </textField>
+
+        </band>
+    </detail>
+
+</jasperReport>
